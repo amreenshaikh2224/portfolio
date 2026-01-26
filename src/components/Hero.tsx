@@ -3,7 +3,7 @@ import { ArrowDown, Sparkles, BarChart3, Zap } from "lucide-react";
 import amreenProfile from "@/assets/amreen-profile.jpg";
 
 const Hero = () => {
-  const handleScrollTo = (id: string) => {
+  const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -44,36 +44,16 @@ const Hero = () => {
               Data Analyst | SQL • Python • Tableau • Power BI
             </h2>
 
-            {/* CTA Buttons */}
-            {/* <div className="flex flex-wrap gap-4 mb-12">
-              <button onClick={() => handleScrollTo("portfolio")} className="btn-primary">
+            {/* ✅ CTA Buttons FIXED (No more 404) */}
+            <div className="flex flex-wrap gap-4 mb-12">
+              <button onClick={() => scrollToSection("portfolio")} className="btn-primary">
                 View Portfolio
               </button>
 
-              <button onClick={() => handleScrollTo("contact")} className="btn-outline">
+              <button onClick={() => scrollToSection("contact")} className="btn-outline">
                 Contact Me
               </button>
-            </div> */}
-
-            <div className="flex flex-wrap gap-4 mb-12">
-                <button
-                  onClick={() => {
-                    document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="btn-primary"
-                >
-                  View Portfolio
-                </button>
-              
-                <button
-                  onClick={() => {
-                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="btn-outline"
-                >
-                  Contact Me
-                </button>
-              </div>
+            </div>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-3 gap-4">
