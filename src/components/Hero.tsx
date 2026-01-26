@@ -45,7 +45,7 @@ const Hero = () => {
             </h2>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-12">
+            {/* <div className="flex flex-wrap gap-4 mb-12">
               <button onClick={() => handleScrollTo("portfolio")} className="btn-primary">
                 View Portfolio
               </button>
@@ -53,7 +53,27 @@ const Hero = () => {
               <button onClick={() => handleScrollTo("contact")} className="btn-outline">
                 Contact Me
               </button>
-            </div>
+            </div> */}
+
+            <div className="flex flex-wrap gap-4 mb-12">
+                <button
+                  onClick={() => {
+                    document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="btn-primary"
+                >
+                  View Portfolio
+                </button>
+              
+                <button
+                  onClick={() => {
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="btn-outline"
+                >
+                  Contact Me
+                </button>
+              </div>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-3 gap-4">
