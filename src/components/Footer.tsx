@@ -58,7 +58,7 @@ const Footer = () => {
         <div className="my-8 border-t border-border/30" />
 
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        {/* <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p className="flex items-center gap-1">
             © {currentYear} Amreen Shaikh. Made with <Heart className="w-4 h-4 text-primary" /> in Goa, India
           </p>
@@ -66,7 +66,7 @@ const Footer = () => {
             All Rights Reserved
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Back to Top Button */}
       <motion.button
