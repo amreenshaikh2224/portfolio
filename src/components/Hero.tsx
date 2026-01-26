@@ -1,8 +1,15 @@
-import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles, BarChart3, Zap } from 'lucide-react';
-import amreenProfile from '@/assets/amreen-profile.jpg';
+import { motion } from "framer-motion";
+import { ArrowDown, Sparkles, BarChart3, Zap } from "lucide-react";
+import amreenProfile from "@/assets/amreen-profile.jpg";
 
 const Hero = () => {
+  const handleScrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
       {/* Background Elements */}
@@ -30,23 +37,22 @@ const Hero = () => {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-4">
-              Hello, I'm{' '}
-              <span className="gradient-text">Amreen Shaikh</span>
+              Hello, I&apos;m <span className="gradient-text">Amreen Shaikh</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl text-muted-foreground font-medium mb-6">
               Data Analyst | SQL • Python • Tableau • Power BI
             </h2>
 
-
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 mb-12">
-              <a href="#portfolio" className="btn-primary">
+              <button onClick={() => handleScrollTo("portfolio")} className="btn-primary">
                 View Portfolio
-              </a>
-              <a href="#contact" className="btn-outline">
+              </button>
+
+              <button onClick={() => handleScrollTo("contact")} className="btn-outline">
                 Contact Me
-              </a>
+              </button>
             </div>
 
             {/* Stats Cards */}
@@ -102,12 +108,15 @@ const Hero = () => {
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl scale-110 animate-pulse-slow" />
-              
+
               {/* Profile Image Container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                 {/* Rotating Border */}
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin" style={{ animationDuration: '20s' }} />
-                
+                <div
+                  className="absolute inset-0 rounded-full border-2 border-dashed border-primary/30 animate-spin"
+                  style={{ animationDuration: "20s" }}
+                />
+
                 {/* Main Image */}
                 <div className="absolute inset-4 rounded-full overflow-hidden border-4 border-primary/50 glow-effect">
                   <img
@@ -120,7 +129,7 @@ const Hero = () => {
                 {/* Floating Elements */}
                 <motion.div
                   animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -top-4 -right-4 p-3 rounded-xl glass-card"
                 >
                   <BarChart3 className="w-6 h-6 text-primary" />
@@ -128,7 +137,7 @@ const Hero = () => {
 
                 <motion.div
                   animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -bottom-4 -left-4 p-3 rounded-xl glass-card"
                 >
                   <Zap className="w-6 h-6 text-primary" />
@@ -146,10 +155,7 @@ const Hero = () => {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
         >
           <span className="text-sm text-muted-foreground">Scroll Down</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          >
+          <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
             <ArrowDown className="w-5 h-5 text-primary" />
           </motion.div>
         </motion.div>
