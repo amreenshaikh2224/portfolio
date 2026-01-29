@@ -46,7 +46,7 @@ export default App;
 //         </Routes>
 //       </HashRouter>
 //     </TooltipProvider>
-  </QueryClientProvider>
-);
+//   </QueryClientProvider>
+// );
 
-export default App;
+// export default App;
